@@ -95,8 +95,7 @@
 }
 </script>
 
-<!-- ── Fonts ── -->
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <style>
 :root {
   --blue: #3C4E75;
@@ -109,8 +108,8 @@
   --green: #25D366;
   --txt: #a8b2be;
   --txt-bright: #eaedf0;
-  --fs: 'Syne', sans-serif;
-  --fb: 'Outfit', sans-serif;
+  --fs: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --fb: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -123,12 +122,6 @@ img{max-width:100%;height:auto;display:block}
 .container{max-width:1200px;margin:0 auto;padding:0 24px}
 .tc{text-align:center}
 .sp{padding:100px 0}
-
-/* ── HOME PAGE → Helvetica ── */
-#home,#home h1,#home h2,#home h3,#home h4,
-#home p,#home a,#home span,#home div,#home button{
-  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif !important;
-}
 
 /* ── AURORA BG ── */
 body::before{
@@ -234,10 +227,14 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:0 5%;h
 /* ── BRANDS MARQUEE ── */
 .brands{overflow:hidden;background:var(--bg);padding:70px 0}
 .brands-title{text-align:center;margin-bottom:50px;color:var(--beige);font-family:var(--fs);font-size:.82rem;font-weight:600;letter-spacing:4px;text-transform:uppercase}
-.track{display:flex;width:max-content;animation:slide 25s linear infinite}
-.brand-logo{flex-shrink:0;height:80px;width:auto;max-width:160px;object-fit:contain;background:transparent;padding:0;border-radius:0;margin:0 40px;transition:.3s ease}
+.track{display:block;white-space:nowrap;width:max-content;animation:slide 25s linear infinite}
+.brand-logo{flex-shrink:0;width:120px;height:120px;object-fit:contain;background:transparent;padding:0;border-radius:0;margin:0 40px;transition:.3s ease;display:inline-block !important;vertical-align:middle;max-width:none !important}
 .brand-logo:hover{transform:scale(1.1);box-shadow:0 8px 25px rgba(0,0,0,.25)}
-.brand-logo.zi{padding:0}.brand-logo.zp{padding:8px}.brand-logo.zo{padding:25px}
+.brand-logo-zoom{flex-shrink:0;width:120px;height:120px;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;margin:0 40px;vertical-align:middle}
+.brand-logo-zoom img{width:100%;height:100%;object-fit:contain;transform:scale(1.1)}
+.brand-logo-zoom-diamond img{transform:scale(1.7)}
+.brand-logo-zoom-arema img{transform:scale(1.2)}
+.brand-logo.zi{padding:0}.brand-logo.zp{padding:0}.brand-logo.zo{padding:0}
 @keyframes slide{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* ── SECTION LABELS ── */
@@ -529,21 +526,21 @@ footer{background:var(--blue);color:#fff;padding:70px 0 40px}
   <section class="brands">
     <p class="brands-title rv">Awesome Brands We Work With</p>
     <div class="track">
-      <img src="ROASTER_LOGO.png" class="brand-logo zi" alt="Roaster">
+      <span class="brand-logo-zoom"><img src="ROASTER_LOGO.png" alt="Roaster"></span>
       <img src="SUN_AUTOTECH_LOGO_NEW.png" class="brand-logo" alt="Sun Autotech">
-      <img src="Landmark-Developers-02.jpg" class="brand-logo" alt="Landmark Developers">
+      <img src="Landmark-Developers-01.png" class="brand-logo" alt="Landmark Developers">
       <img src="crossover.png" class="brand-logo" alt="Crossover">
-      <img src="bookmypuja.png" class="brand-logo zp" alt="Book My Puja">
-      <img src="DIAMOND_AVL_PRO.png" class="brand-logo zi" alt="Diamond AVL Pro">
-      <img src="Arema_logo.png" class="brand-logo zi" alt="Arema">
+      <span class="brand-logo-zoom"><img src="bookmypuja2.png" alt="Book My Puja"></span>
+      <span class="brand-logo-zoom brand-logo-zoom-diamond"><img src="DIAMOND_AVL_PRO.png" alt="Diamond AVL Pro"></span>
+      <span class="brand-logo-zoom brand-logo-zoom-arema"><img src="Arema_logo.png" alt="Arema"></span>
       <img src="Neon_plain_logo.jpeg" class="brand-logo" alt="Neon">
-      <img src="ROASTER_LOGO.png" class="brand-logo zi" alt="Roaster">
+      <span class="brand-logo-zoom"><img src="ROASTER_LOGO.png" alt="Roaster"></span>
       <img src="SUN_AUTOTECH_LOGO_NEW.png" class="brand-logo" alt="Sun Autotech">
-      <img src="Landmark-Developers-02.jpg" class="brand-logo" alt="Landmark Developers">
+      <img src="Landmark-Developers-01.png" class="brand-logo" alt="Landmark Developers">
       <img src="crossover.png" class="brand-logo" alt="Crossover">
-      <img src="bookmypuja.png" class="brand-logo zp" alt="Book My Puja">
-      <img src="DIAMOND_AVL_PRO.png" class="brand-logo zi" alt="Diamond AVL Pro">
-      <img src="Arema_logo.png" class="brand-logo zi" alt="Arema">
+      <span class="brand-logo-zoom"><img src="bookmypuja2.png" alt="Book My Puja"></span>
+      <span class="brand-logo-zoom brand-logo-zoom-diamond"><img src="DIAMOND_AVL_PRO.png" alt="Diamond AVL Pro"></span>
+      <span class="brand-logo-zoom brand-logo-zoom-arema"><img src="Arema_logo.png" alt="Arema"></span>
       <img src="Neon_plain_logo.jpeg" class="brand-logo" alt="Neon">
     </div>
   </section>
@@ -683,20 +680,54 @@ footer{background:var(--blue);color:#fff;padding:70px 0 40px}
       <p>Every service is designed around one goal: building your brand's digital authority through content that connects.</p>
     </div>
   </div>
-  <section class="sp container">
-    <div class="svc-detail rv">
-      <div><div class="pkg-badge">Most Popular</div><h3>Social Media Management</h3><p class="price">Monthly Retainer</p><a href="https://wa.me/919072175281?text=Hi%2C%20I%20am%20interested%20in%20Social%20Media%20Management.%20May%20I%20know%20more%3F" target="_blank" class="btn" style="display:inline-flex;font-size:.9rem;padding:12px 24px;margin-top:20px">Get a Quote →</a></div>
-      <div><p>We take over your entire social media presence — from monthly content calendars and scripting to video production and daily posting.</p><ul class="feats"><li>Monthly Content Calendar</li><li>Reels Scripting & Editing</li><li>Story & Post Creation</li><li>Hashtag Strategy</li><li>Caption Writing</li><li>Scheduled Posting</li><li>Analytics & Reporting</li><li>Monthly Strategy Review</li></ul></div>
-    </div>
-    <div class="svc-detail rv d1">
-      <div><div class="pkg-badge">High Impact</div><h3>Promotional Video Package</h3><p class="price">12 Videos / Year</p><a href="https://wa.me/919072175281?text=Hi%2C%20I%20am%20interested%20in%20the%20Video%20Package.%20May%20I%20know%20more%3F" target="_blank" class="btn" style="display:inline-flex;font-size:.9rem;padding:12px 24px;margin-top:20px">Get a Quote →</a></div>
-      <div><p>One powerful promo video per month — from concept to final cut. We handle shoot planning, cinematography, and full post-production.</p><ul class="feats"><li>12 Promo Videos / Year</li><li>Shoot Planning & Scripting</li><li>Location Scouting</li><li>Professional Cinematography</li><li>Colour Grading</li><li>Motion Graphics</li><li>Subtitles & Captions</li><li>Final Cut Delivery</li></ul></div>
-    </div>
-    <div class="svc-detail rv d2">
-      <div><div class="pkg-badge">Brand Visibility</div><h3>Poster Bundle</h3><p class="price">48 Designs / Year</p><a href="https://wa.me/919072175281?text=Hi%2C%20I%20am%20interested%20in%20the%20Poster%20Bundle.%20May%20I%20know%20more%3F" target="_blank" class="btn" style="display:inline-flex;font-size:.9rem;padding:12px 24px;margin-top:20px">Get a Quote →</a></div>
-      <div><p>Four impactful posters delivered every week, keeping your brand consistently visible online all year round.</p><ul class="feats"><li>48 Posters / Year</li><li>Weekly Delivery</li><li>Custom Brand Design</li><li>Content Development</li><li>Unlimited Revisions</li><li>Festival & Event Posters</li><li>Offer & Promotion Posts</li><li>All Platform Sizes</li></ul></div>
+  <!-- Works: Video Production -->
+  <section class="works-svc" style="padding:90px 0;background:var(--bg)">
+    <div class="container works-svc-inner">
+      <div class="works-svc-img rl">
+        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&h=420&fit=crop" alt="Video Production" style="width:100%;border-radius:20px;display:block">
+      </div>
+      <div class="works-svc-text rr">
+        <span class="slabel">01</span>
+        <h2 class="stitle">Video Production</h2>
+        <p style="color:#a0adb8;line-height:1.8;margin-bottom:20px">Most videos get scrolled past in half a second. Ours don't. Every project starts with a real idea — something worth watching — and then we build the visuals around it. From the first concept call to the final export, we handle the whole journey: scripting, shooting, editing, colour grading, and delivery.</p>
+        <p style="color:#a0adb8;line-height:1.8;margin-bottom:32px">The goal is never just a "nice-looking video." It's a video that makes someone stop, feel something, and think about your brand differently. That's the bar we hold ourselves to on every single project.</p>
+        <a href="https://wa.me/919072175281?text=Hi%2C%20I%20am%20interested%20in%20Video%20Production.%20May%20I%20know%20more%3F" target="_blank" class="btnb">Get a Quote →</a>
+      </div>
     </div>
   </section>
+  <div class="gline"></div>
+  <!-- Works: Social Media Management -->
+  <section class="works-svc" style="padding:90px 0;background:var(--blue)">
+    <div class="container works-svc-inner works-svc-rev">
+      <div class="works-svc-text rl">
+        <span class="slabel" style="color:rgba(208,190,176,.55)">02</span>
+        <h2 class="stitle" style="color:#fff">Social Media Management</h2>
+        <p style="color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:20px">Your brand's social media is usually the first thing a potential customer sees — before they visit your website, before they ask around, before they make any decision. That first impression matters more than most businesses realise, and it's what we build for.</p>
+        <p style="color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:32px">We take care of everything: planning what goes out, creating the content, designing the visuals, writing the captions, and posting it consistently. But beyond the logistics, we're focused on one thing — making your brand the kind of presence people actually want to follow.</p>
+        <a href="https://wa.me/919072175281?text=Hi%2C%20I%20am%20interested%20in%20Social%20Media%20Management.%20May%20I%20know%20more%3F" target="_blank" class="btn">Get a Quote →</a>
+      </div>
+      <div class="works-svc-img rr">
+        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=420&fit=crop" alt="Social Media Management" style="width:100%;border-radius:20px;display:block">
+      </div>
+    </div>
+  </section>
+  <div class="gline"></div>
+  <!-- Works: Social Media + Meta Ads -->
+  <section class="works-svc" style="padding:90px 0;background:var(--bg)">
+    <div class="container works-svc-inner">
+      <div class="works-svc-img rl">
+        <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&h=420&fit=crop" alt="Social Media + Meta Ads" style="width:100%;border-radius:20px;display:block">
+      </div>
+      <div class="works-svc-text rr">
+        <span class="slabel">03</span>
+        <h2 class="stitle">Social Media + Meta Ads</h2>
+        <p style="color:#a0adb8;line-height:1.8;margin-bottom:20px">Organic content builds trust. Paid ads build reach. When you combine them properly, you get something neither can do alone — a brand that shows up everywhere the right people are looking, and actually resonates when it does.</p>
+        <p style="color:#a0adb8;line-height:1.8;margin-bottom:32px">We manage your social presence and run your Meta campaigns as one connected system. The creative we make for your feed feeds directly into your ads. The data from your ads informs what we post. We track what's working, cut what isn't, and keep pushing toward real business results.</p>
+        <a href="https://wa.me/919072175281?text=Hi%2C%20I%20am%20interested%20in%20Social%20Media%20Management%20with%20Meta%20Ads.%20May%20I%20know%20more%3F" target="_blank" class="btnb">Get a Quote →</a>
+      </div>
+    </div>
+  </section>
+  <div class="gline"></div>
   <section class="svc-cta">
     <div class="container">
       <span class="slabel rv">Not Sure? Let's Talk</span>
@@ -720,59 +751,32 @@ footer{background:var(--blue);color:#fff;padding:70px 0 40px}
     </div>
   </div>
 
-  <!-- Service 1 -->
-  <section class="works-svc" style="padding:90px 0;background:var(--bg)">
-    <div class="container works-svc-inner">
-      <div class="works-svc-img rl">
-        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&h=420&fit=crop" alt="Video Production" style="width:100%;border-radius:20px;display:block">
+  <!-- Placeholder grid -->
+  <section class="sp container">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;margin-top:20px">
+      <div class="rv" style="background:var(--card);border:2px dashed var(--border);border-radius:20px;padding:60px 32px;text-align:center">
+        <div style="font-size:3rem;margin-bottom:20px">🎬</div>
+        <h3 style="color:var(--beige);margin-bottom:12px">Video Production</h3>
+        <p style="color:var(--txt);font-size:.95rem">Portfolio coming soon — our best cinematic work will live here.</p>
       </div>
-      <div class="works-svc-text rr">
-        <span class="slabel">01</span>
-        <h2 class="stitle">Video Production</h2>
-        <p style="color:#a0adb8;line-height:1.8;margin-bottom:20px">Most videos get scrolled past in half a second. Ours don't. Every project starts with a real idea — something worth watching — and then we build the visuals around it. From the first concept call to the final export, we handle the whole journey: scripting, shooting, editing, colour grading, and delivery.</p>
-        <p style="color:#a0adb8;line-height:1.8;margin-bottom:32px">The goal is never just a "nice-looking video." It's a video that makes someone stop, feel something, and think about your brand differently. That's the bar we hold ourselves to on every single project.</p>
-        <a href="https://wa.me/919072175281?text=Hi%2C%20I%20am%20interested%20in%20Video%20Production.%20May%20I%20know%20more%3F" target="_blank" class="btnb">Get a Quote →</a>
+      <div class="rv d1" style="background:var(--card);border:2px dashed var(--border);border-radius:20px;padding:60px 32px;text-align:center">
+        <div style="font-size:3rem;margin-bottom:20px">📱</div>
+        <h3 style="color:var(--beige);margin-bottom:12px">Social Media Management</h3>
+        <p style="color:var(--txt);font-size:.95rem">Case studies and content samples dropping soon.</p>
       </div>
-    </div>
-  </section>
-
-  <div class="gline"></div>
-
-  <!-- Service 2 -->
-  <section class="works-svc" style="padding:90px 0;background:var(--blue)">
-    <div class="container works-svc-inner works-svc-rev">
-      <div class="works-svc-text rl">
-        <span class="slabel" style="color:rgba(208,190,176,.55)">02</span>
-        <h2 class="stitle" style="color:#fff">Social Media Management</h2>
-        <p style="color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:20px">Your brand's social media is usually the first thing a potential customer sees — before they visit your website, before they ask around, before they make any decision. That first impression matters more than most businesses realise, and it's what we build for.</p>
-        <p style="color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:32px">We take care of everything: planning what goes out, creating the content, designing the visuals, writing the captions, and posting it consistently. But beyond the logistics, we're focused on one thing — making your brand the kind of presence people actually want to follow. The kind that earns trust before a conversation even starts.</p>
-        <a href="https://wa.me/919072175281?text=Hi%2C%20I%20am%20interested%20in%20Social%20Media%20Management.%20May%20I%20know%20more%3F" target="_blank" class="btn">Get a Quote →</a>
-      </div>
-      <div class="works-svc-img rr">
-        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=420&fit=crop" alt="Social Media Management" style="width:100%;border-radius:20px;display:block">
+      <div class="rv d2" style="background:var(--card);border:2px dashed var(--border);border-radius:20px;padding:60px 32px;text-align:center">
+        <div style="font-size:3rem;margin-bottom:20px">📣</div>
+        <h3 style="color:var(--beige);margin-bottom:12px">Social Media + Meta Ads</h3>
+        <p style="color:var(--txt);font-size:.95rem">Campaign results and ad creatives — watch this space.</p>
       </div>
     </div>
   </section>
+  <div class="gline"></div>
+
+  <!-- Service 2 REMOVED (placeholder above) -->
 
   <div class="gline"></div>
 
-  <!-- Service 3 -->
-  <section class="works-svc" style="padding:90px 0;background:var(--bg)">
-    <div class="container works-svc-inner">
-      <div class="works-svc-img rl">
-        <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&h=420&fit=crop" alt="Social Media + Meta Ads" style="width:100%;border-radius:20px;display:block">
-      </div>
-      <div class="works-svc-text rr">
-        <span class="slabel">03</span>
-        <h2 class="stitle">Social Media + Meta Ads</h2>
-        <p style="color:#a0adb8;line-height:1.8;margin-bottom:20px">Organic content builds trust. Paid ads build reach. When you combine them properly, you get something neither can do alone — a brand that shows up everywhere the right people are looking, and actually resonates when it does.</p>
-        <p style="color:#a0adb8;line-height:1.8;margin-bottom:32px">We manage your social presence and run your Meta campaigns as one connected system. The creative we make for your feed feeds directly into your ads. The data from your ads informs what we post. We track what's working, cut what isn't, and keep pushing toward the only metric that matters: real business results — more visibility, better leads, and a marketing spend that earns its keep.</p>
-        <a href="https://wa.me/919072175281?text=Hi%2C%20I%20am%20interested%20in%20Social%20Media%20Management%20with%20Meta%20Ads.%20May%20I%20know%20more%3F" target="_blank" class="btnb">Get a Quote →</a>
-      </div>
-    </div>
-  </section>
-
-  <div class="gline"></div>
 
   <div class="container tc" style="padding:80px 0">
     <span class="slabel rv">Ready?</span>
